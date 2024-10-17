@@ -1,33 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import BusinessList from './components/BusinessList'
+import SearchBar from './components/SearchBar'
 
-function App() {
-  const [count, setCount] = useState(0)
+const data = [
+  {
+      "image": "",
+      "name": "Chili\"s",
+      "address": "123 Fake st.",
+      "city": "Euless",
+      "state": "TX",
+      "zipcode": "76039",
+      "category": "American",
+      "rating": "4.0 stars",
+      "review count": "90 reviews"    
+  },
+  {
+      "image": "",
+      "name": "Olive Garden",
+      "address": "221 Deli rd.",
+      "city": "Dallas",
+      "state": "TX",
+      "zipcode": "76401",
+      "category": "Italian",
+      "rating": "3.7 stars",
+      "review count": "891 reviews"    
+  },
+  {
+      "image": "",
+      "name": "Panda Express",
+      "address": "314 Wok ln.",
+      "city": "Ft. Worth",
+      "state": "TX",
+      "zipcode": "76044",
+      "category": "Asian",
+      "rating": "3.2 stars",
+      "review count": "900 reviews"    
+  },
+  {
+      "image": "",
+      "name": "The Reserve",
+      "address": "1310 Chisolm Trail #100",
+      "city": "Euless",
+      "state": "TX",
+      "zipcode": "76039",
+      "category": "Mexican",
+      "rating": "4.2 stars",
+      "review count": "630 reviews"    
+  }
+];
 
+
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <section className='bg-limeGreen py-4 border-b-4 border-b-black'>
+      <h1 className='text-4xl text-white font-bold text-center'>Ravenous</h1>
+    </section>
+      <SearchBar />
+      <BusinessList businesses={data}/>
     </>
   )
 }
